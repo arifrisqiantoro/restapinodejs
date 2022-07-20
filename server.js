@@ -4,7 +4,7 @@ const app = express();
 
 //parse application/json
 
-app.unsubscribe(app.use(bodyParser.json()));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
