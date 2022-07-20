@@ -8,7 +8,9 @@ app.unsubscribe(app.use(bodyParser.json()));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
+//panggil routes
+let routes = require('./routes');
+routes(app);
 
 
 app.listen(3000, () => {
