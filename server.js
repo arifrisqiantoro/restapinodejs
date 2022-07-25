@@ -1,14 +1,17 @@
 const bodyParser = require("body-parser");
 const express = require("express");
+let ejs = require('ejs');
 const app = express();
 
-//parse application/json
+app.set('view engine', 'ejs');
 
+//parse application/json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 //panggil routes
-let routes = require("./routes");
+let routes = require("./src/routes/index");
 routes(app);
 
 app.listen(3000, () => {

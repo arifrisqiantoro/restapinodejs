@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function (app) {
-  let response = require("./controller");
+  let response = require("../controllers/controller");
 
     app.route("/")
      .get(response.index);

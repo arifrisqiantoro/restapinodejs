@@ -1,17 +1,23 @@
 "use strict";
 let response = require("./res");
-let connection = require("./koneksi");
+let connection = require("../config/koneksi");
+const { json } = require("body-parser");
 
-exports.index = function (req, res) {
+/*exports.index = function (req, res) {
   response.ok("APLIKASI REST API BERJALAN", res);
 };
+*/
+
+exports.index = function (req, res, next) {
+  res.render("../src/views/index");
+}
 
 exports.getdatauser = function (req, res) {
   connection.query("SELECT * FROM ms_user", function (error, rows, fields) {
     if (error) {
       connection.log(error);
     } else {
-      response.ok(rows, res);
+      res.render("../src/views/datauser", {rows});
     }
   });
 };
@@ -25,7 +31,7 @@ exports.getdatauserbyid = function (req, res) {
       if (error) {
         connection.log(error);
       } else {
-        response.ok(rows, res);
+        res.render("../src/views/datauser", {rows});
       }
     }
   );
