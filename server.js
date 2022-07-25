@@ -1,9 +1,11 @@
 const bodyParser = require("body-parser");
+const path = require("path")
 const express = require("express");
-let ejs = require('ejs');
+const ejs = require("ejs");
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public')); // memberi tahu kepada node folder css dan js
 
 //parse application/json
 app.use(bodyParser.json());

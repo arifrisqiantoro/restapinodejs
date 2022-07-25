@@ -6,24 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/src/public/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
 
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>INI HALAMAN DATA USER </h1>
-    <% rows.forEach(user => { %>
-        <ul>
-            <li>ID User       : <%= user.id_user %> </li>
-            <li>Kode Karyawan : <%= user.kode_karyawan %> </li>
-            <li>Nama Karyawan : <%= user.nama_karyawan %> </li>
-            <li>Jabatan       : <%= user.jabatan %> </li>
-        </ul>
-
-   <% }) %>
-
-    <script src="/src/public/jquery-3.3.1.slim.min.js"></script>
-    <script src="/src/public/popper.min.js"></script>
-    <script src="/src/public/bootstrap.min.js"></script>
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/getdatauser">Data User</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+    <div class="container-fluid">
+      <h1>Data User</h1>
+     <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID User</th>
+        <th scope="col">Kode Karyawan</th>
+        <th scope="col">Nama Karyawan</th>
+        <th scope="col">Jabatan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% rows.forEach(user => { %>
+      <tr>
+        <td>  <%= user.id_user %> </td>
+        <td>  <%= user.kode_karyawan %> </td>
+        <td>  <%= user.nama_karyawan %> </td>
+        <td>  <%= user.jabatan %> </td>
+      </tr>
+      <% }) %>
+    </tbody>
+    </table>
+  </div>
+  
+  <script src="/jquery-3.3.1.slim.min.js"></script>
+  <script src="/popper.min.js"></script>
+  <script src="/bootstrap.min.js"></script>
   </body>
 </html>
