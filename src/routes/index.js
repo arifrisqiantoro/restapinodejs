@@ -12,6 +12,7 @@ module.exports = function (app) {
 
   //menampilkan data ms_user berdasarkan id_user
 
+  /*
     app.route("/getdatauser/:id")
      .get(response.getdatauserbyid);
 
@@ -23,5 +24,6 @@ module.exports = function (app) {
 
     app.route("/deletedatauser")
     .delete(response.deletedatauser);
+    */
 
 };

@@ -1,7 +1,7 @@
 "use strict";
-let response = require("./res");
+//let response = require("./res");
 let connection = require("../config/koneksi");
-const { json } = require("body-parser");
+//const { json } = require("body-parser");
 
 /*exports.index = function (req, res) {
   response.ok("APLIKASI REST API BERJALAN", res);
@@ -22,6 +22,7 @@ exports.getdatauser = function (req, res) {
   });
 };
 
+/*
 exports.getdatauserbyid = function (req, res) {
   let id = req.params.id;
   connection.query(
@@ -52,3 +53,4 @@ exports.deletedatauser = function (req, res) {
     response.ok("METHOD DELETE DATA USER OK", res);
     
 }
+*/
